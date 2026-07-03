@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avish Jain — Business + Computer Science @ Carnegie Mellon</title>
+<meta name="description" content="Avish Jain — incoming Carnegie Mellon student studying Business Administration and Computer Science. Startup founder, finance leader, and builder based in New York.">
+<meta name="author" content="Avish Jain">
+<meta name="theme-color" content="#1a56db">
+<link rel="canonical" href="https://avishj19.github.io/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Avish Jain — Business + Computer Science @ Carnegie Mellon">
+<meta property="og:description" content="Incoming Carnegie Mellon student studying Business and Computer Science. Startup founder, finance leader, and builder based in New York.">
+<meta property="og:url" content="https://avishj19.github.io/">
+<meta property="og:site_name" content="Avish Jain">
+<!-- To show a preview image when shared, add an og:image.jpg/png (1200x630) and uncomment: -->
+<!-- <meta property="og:image" content="https://avishj19.github.io/og-image.png"> -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Avish Jain — Business + Computer Science @ Carnegie Mellon">
+<meta name="twitter:description" content="Incoming Carnegie Mellon student studying Business and Computer Science. Startup founder, finance leader, and builder based in New York.">
+
+<!-- Inline SVG favicon: monogram "A" on the brand gradient -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a56db'/%3E%3Cstop offset='0.55' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23e8543f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='600' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1b33;
+    --paper:#ffffff;
+    --paper-2:#eef4fc;
+    --muted:#5a6b85;
+    --line:#dce6f2;
+    --accent:#1a56db;
+    --accent-soft:#2e6ff0;
+    --accent-deep:#123a9e;
+    /* secondary + tertiary accents for color variety */
+    --coral:#e8543f;
+    --amber:#f5a524;
+    --teal:#12a594;
+    --violet:#7c5cff;
+    --grad:linear-gradient(120deg,#1a56db 0%,#7c5cff 55%,#e8543f 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"kern","liga";
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit;text-decoration:none}
+  /* keyboard accessibility: visible focus ring */
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:3px}
+  /* scroll progress bar */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:100;transition:width .1s linear}
+  .wrap{max-width:920px;margin:0 auto;padding:0 32px}
+
+  .mono{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+  nav .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+  nav .links{display:flex;gap:30px}
+  nav .links a{font-size:.86rem;color:var(--muted);transition:color .2s;position:relative}
+  nav .links a:hover{color:var(--accent)}
+  nav .links a.active{color:var(--accent)}
+  nav .links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent);transition:width .25s}
+  nav .links a:hover::after,nav .links a.active::after{width:100%}
+  @media(max-width:640px){nav .links{display:none}}
+
+  header{position:relative;padding:110px 0 80px;border-bottom:1px solid var(--line);overflow:hidden}
+  header::before{content:"";position:absolute;top:-160px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.18),rgba(124,92,255,0) 70%);pointer-events:none}
+  header::after{content:"";position:absolute;bottom:-140px;left:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(232,84,63,.14),rgba(232,84,63,0) 70%);pointer-events:none}
+  header .wrap{position:relative;z-index:1}
+  .hero-eyebrow{margin-bottom:26px;display:flex;align-items:center;gap:12px}
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(232,84,63,.16)}
+  h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.8rem,8vw,5.2rem);line-height:.98;letter-spacing:-.03em}
+  h1 em{font-style:italic;color:var(--accent)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    h1 em{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .tagline{margin-top:28px;font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:660px;color:#26344d}
+  .hero-meta{margin-top:38px;display:flex;flex-wrap:wrap;gap:26px}
+  .hero-meta a{font-size:.9rem;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s,color .2s;color:var(--muted)}
+  .hero-meta a:hover{color:var(--accent);border-color:var(--accent)}
+  .hero-meta a.resume-btn{border:1px solid var(--accent);border-radius:8px;padding:6px 16px;color:var(--accent);font-weight:500;display:inline-flex;align-items:center;gap:7px;transition:background .22s,color .22s,transform .2s}
+  .hero-meta a.resume-btn span{transition:transform .2s}
+  .hero-meta a.resume-btn:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+  .hero-meta a.resume-btn:hover span{transform:translateX(3px)}
+
+  section{padding:76px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:44px}
+  .sec-head .num{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:500}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:1.9rem;letter-spacing:-.02em;position:relative}
+  .sec-head h2::after{content:"";position:absolute;left:0;bottom:-10px;width:38px;height:3px;border-radius:3px;background:var(--grad)}
+  /* rotating accent color per section */
+  #about  .sec-head .num{color:var(--accent-soft)}
+  #experience .sec-head .num{color:var(--teal)}
+  #projects .sec-head .num{color:var(--violet)}
+  #awards .sec-head .num{color:var(--amber)}
+  #skills .sec-head .num{color:var(--coral)}
+
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-body p{font-size:1.08rem;color:#2b3850}
+  .about-body p+p{margin-top:18px}
+  .facts{display:flex;flex-direction:column;gap:22px}
+  .fact .k{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+  .fact .v{font-size:1rem;font-weight:500}
+  .fact .v span{display:block;color:var(--muted);font-weight:400;font-size:.92rem}
+
+  .exp{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+  .exp:first-of-type{border-top:none}
+  @media(max-width:640px){.exp{grid-template-columns:1fr;gap:8px}}
+  .exp .when{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted);padding-top:4px}
+  .exp .role{font-family:'Fraunces',serif;font-size:1.28rem;font-weight:500;letter-spacing:-.01em}
+  .exp .org{font-size:.92rem;color:var(--accent);font-weight:500;margin-top:2px}
+  .exp ul{margin-top:14px;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .exp li{position:relative;padding-left:20px;font-size:.96rem;color:#33415c}
+  .exp li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--accent-soft)}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr;gap:40px}}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .chip{font-size:.85rem;padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);transition:border-color .2s,transform .2s,color .2s,background .2s}
+  .chip:hover{transform:translateY(-2px)}
+  .chip:nth-child(5n+1):hover{border-color:var(--accent);color:var(--accent);background:rgba(26,86,219,.08)}
+  .chip:nth-child(5n+2):hover{border-color:var(--teal);color:var(--teal);background:rgba(18,165,148,.10)}
+  .chip:nth-child(5n+3):hover{border-color:var(--violet);color:var(--violet);background:rgba(124,92,255,.10)}
+  .chip:nth-child(5n+4):hover{border-color:var(--coral);color:var(--coral);background:rgba(232,84,63,.09)}
+  .chip:nth-child(5n+5):hover{border-color:var(--amber);color:#b9781a;background:rgba(245,165,36,.12)}
+  .cert-list{display:flex;flex-direction:column;gap:16px}
+  .cert{display:flex;gap:14px;align-items:flex-start}
+  .cert .mark{font-family:'JetBrains Mono',monospace;color:var(--accent-soft);font-size:.85rem;padding-top:2px}
+  .cert .body strong{display:block;font-weight:600;font-size:.98rem}
+  .cert .body span{font-size:.85rem;color:var(--muted)}
+  .edu{margin-top:6px;display:flex;flex-direction:column;gap:20px}
+  .edu .row .name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500}
+  .edu .row .meta{font-size:.9rem;color:var(--muted);margin-top:2px}
+
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  @media(max-width:640px){.projects{grid-template-columns:1fr}}
+  .project{position:relative;border:1px solid var(--line);border-radius:12px;padding:26px;background:var(--paper-2);transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;flex-direction:column;overflow:hidden}
+  .project::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:0;transition:opacity .25s}
+  .project:hover::before{opacity:1}
+  .project:hover{border-color:var(--accent-soft);transform:translateY(-3px);box-shadow:0 12px 30px -14px rgba(26,86,219,.28)}
+  .project .ptitle{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;letter-spacing:-.01em}
+  .project .pdesc{margin-top:10px;font-size:.96rem;color:#33415c;flex:1}
+  .project .ptags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .project .ptag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:3px 8px;background:#fff}
+  .project .plink{margin-top:18px;font-size:.9rem;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+  .project .plink span{transition:transform .2s}
+  .project:hover .plink span{transform:translateX(3px)}
+
+  .awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  @media(max-width:640px){.awards{grid-template-columns:1fr}}
+  .award{border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--paper-2);transition:border-color .2s,transform .2s}
+  .award:hover{transform:translateY(-3px)}
+  .award .aicon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:500;color:#fff;margin-bottom:14px}
+  .award:nth-child(1) .aicon{background:var(--accent)}
+  .award:nth-child(2) .aicon{background:var(--teal)}
+  .award:nth-child(3) .aicon{background:var(--violet)}
+  .award:nth-child(4) .aicon{background:var(--amber)}
+  .award:nth-child(1):hover{border-color:var(--accent)}
+  .award:nth-child(2):hover{border-color:var(--teal)}
+  .award:nth-child(3):hover{border-color:var(--violet)}
+  .award:nth-child(4):hover{border-color:var(--amber)}
+  .award .aname{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:500;line-height:1.25;letter-spacing:-.01em}
+  .award .adesc{margin-top:8px;font-size:.9rem;color:var(--muted)}
+
+  .contact{padding:90px 0}
+  .contact h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.025em;line-height:1.05}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .contact h2 em{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .contact-links{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+  .contact-links a{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border:1px solid transparent;border-radius:8px;font-size:.92rem;font-weight:500;color:#fff;background:var(--grad);background-size:160% 160%;transition:background-position .35s,transform .2s,box-shadow .2s}
+  .contact-links a:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(124,92,255,.5)}
+  .contact-links a.plain{background:none;border-color:var(--line);color:var(--ink)}
+  .contact-links a.plain:hover{background:var(--paper-2);color:var(--accent);border-color:var(--accent-soft);box-shadow:none}
+
+  footer{padding:34px 0;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  footer span{font-size:.82rem;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">Avish Jain</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="hero-eyebrow reveal">
+      <span class="dot"></span>
+      <span class="mono">New York, NY / Incoming @ Carnegie Mellon</span>
+    </div>
+    <h1 class="reveal">Avish <em>Jain</em></h1>
+    <p class="tagline reveal">I'm an incoming Freshman at Carnegie Mellon University majoring in Business Administration and Computer Science.</p>
+    <div class="hero-meta reveal">
+      <a href="mailto:avishj19@gmail.com">avishj19@gmail.com</a>
+      <a href="https://www.linkedin.com/in/avishjain-1a9054346" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="resume-btn" href="#" data-resume>Resume <span>&#8594;</span></a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I am an incoming Freshman at Carnegie Mellon University majoring in Business Administration and Computer Science. I am passionate about finance and eager to gain hands-on experience to grow my skills. I am dedicated, driven, and focused on leadership and continuous improvement.</p>
+        <p>I also have a strong interest in computer science, having gained valuable experience through a summer program. Outside of academics, I'm actively involved in several clubs, with my biggest commitment to the Finance Club, where I create engaging lessons. I aim to make a positive, lasting impact on the world.</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><div class="k">Studying</div><div class="v">Business + Computer Science<span>Carnegie Mellon University</span></div></div>
+        <div class="fact"><div class="k">Focus</div><div class="v">Finance and Leadership<span>Continuous improvement</span></div></div>
+        <div class="fact"><div class="k">Also into</div><div class="v">Computer Science<span>HTML, CSS, JavaScript</span></div></div>
+        <div class="fact"><div class="k">Based in</div><div class="v">New York, New York</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">02</span><h2>Experience</h2></div>
+
+    <div class="exp reveal">
+      <div class="when">May 2026 to Present</div>
+      <div>
+        <div class="role">Executive Director</div>
+        <div class="org">TryAi</div>
+        <ul>
+          <li>Tech lead and Director of Operations for a startup that lets you view everyday marketplace items in 3D on your phone and use AR to give them a real physical presence.</li>
+          <li>Built the backend and the video demos we use to show the product to investors like 996 Ventures. <a href="https://drive.google.com/file/d/11tGaTdP8i8MAGTLB81cN-H0r6AvpsrZ8/view" target="_blank" rel="noopener" style="color:var(--accent);font-weight:500;border-bottom:1px solid var(--line)">Watch the demo</a></li>
+          <li>Managed the operations that helped us raise $10,000 in funding.</li>
+          <li>Improved API performance and created real-time rendering that turns 2D images into 3D models of everyday objects.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Dec 2023 to Present</div>
+      <div>
+        <div class="role">Senior Portfolio Manager</div>
+        <div class="org">BYCIG</div>
+        <ul>
+          <li>Collaborated with the senior executive board to develop a financial literacy and real-world skills curriculum.</li>
+          <li>Created pitch decks and presentations on private equity concepts and market trends.</li>
+          <li>Led a team of 40+ members to review monthly equity proposals for accuracy and clarity.</li>
+          <li>Expanded club membership by 65% through campus recruiting and partnerships with the BTHS Finance Club.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Oct 2022 to Present</div>
+      <div>
+        <div class="role">Vice President</div>
+        <div class="org">Finance Club</div>
+        <ul>
+          <li>Expanded club membership by 30% through targeted recruiting emails and on-campus events.</li>
+          <li>Organized biweekly meetings and coordinated two monthly events for finance literacy.</li>
+          <li>Led the initiative to host a Brooklyn Tech-wide virtual stock market competition with 500+ participants.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jul 2024 to Present</div>
+      <div>
+        <div class="role">Executive Manager and Founder</div>
+        <div class="org">NextGen Innovators</div>
+        <ul>
+          <li>Led and managed a 3D modeling curriculum and events for underprivileged middle school students in Brooklyn.</li>
+          <li>Coordinated and mentored 30+ students, fostering creativity and technical skills in 3D modeling.</li>
+          <li>Collaborated with educators and volunteers to create an engaging and supportive learning environment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jan 2023 to Nov 2025</div>
+      <div>
+        <div class="role">Wide Receiver / Defensive Back and Co-Captain</div>
+        <div class="org">Varsity Football</div>
+        <ul>
+          <li>Mentored over 10 teammates with strategic guidance and skill development, leading to cohesive team dynamics and consistent performance improvements throughout the championship season.</li>
+          <li>Fostered a strong team culture through leadership initiatives, resulting in winning the PSAL championship.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Sep 2025 to Present</div>
+      <div>
+        <div class="role">Chief Operating Officer, Partcycle</div>
+        <div class="org">Virtual Enterprises International, Inc.</div>
+        <ul>
+          <li>COO of Partcycle, a virtual enterprise company of 30 people offering a yearly subscription service that helped people find replacement parts for everyday items that break easily.</li>
+          <li>Users scanned a barcode to get connected to the right part through our in-house database, plus hands-on tutorials and live chat/video support to fix items themselves.</li>
+          <li>Oversaw operations across the entire company, working closely with the C-suite on strategy and execution.</li>
+          <li>Coordinated pitch decks, tradeshows, and national competition prep, helping drive $400K in average tradeshow sales and $1 million in annual revenue.</li>
+          <li>Led the team to a top 8 national finish in the Newsletter competition and an honorable mention in Marketing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jul 2025 to Aug 2025</div>
+      <div>
+        <div class="role">Harvard Undergraduate Ventures-TECH Summer Program</div>
+        <div class="org">Harvard John A. Paulson School of Engineering and Applied Sciences</div>
+        <ul>
+          <li>Participated in a competitive 6-week virtual program hosted by Harvard Undergraduate Ventures and TECH at Harvard SEAS, designed for high-achieving high school students interested in startups, venture capital, and innovation.</li>
+          <li>Interned with a real VC-backed startup, contributing to a live business challenge aligned with my interests.</li>
+          <li>Learned from Harvard students, founders, and venture capitalists through daily seminars, case studies, and hands-on workshops.</li>
+          <li>Explored why 90% of startups fail and how the most successful ones navigate product-market fit, user growth, and capital strategy.</li>
+          <li>Attended sessions with C-suite executives and startup mentors from top firms like Y Combinator and Andreessen Horowitz.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jul 2024 to Sep 2024</div>
+      <div>
+        <div class="role">Human Resources Generalist</div>
+        <div class="org">The STEAM Boat</div>
+        <ul>
+          <li>The key role was recruiting and retaining skilled individuals, developing training programs, and creating continuous improvement.</li>
+          <li>It involved managing compensation, coordinating with volunteers, and addressing conflict, aligning with the HR strategies and goals to ensure the volunteers are valuable to the non-profit. With over 280 members, the complexity and scale of these tasks require careful planning and execution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jul 2024 to Aug 2024</div>
+      <div>
+        <div class="role">Summer Intensive Student</div>
+        <div class="org">All Star Code</div>
+        <ul>
+          <li>A six-week program learning core skills of building and developing a website using HTML, CSS, and Javascript.</li>
+          <li>Helped to develop a demo day project deploying the skills I learned in the program and presented it to corporate leaders at ServiceNow.</li>
+          <li>Created a website that gave recommendations of resources based on the type of coding language you wanted and the amount of knowledge that you had on that programming language.</li>
+          <li>Gained proficiency in Visual Studio Code, Github, and Gitbash. 30 hours per week.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp reveal">
+      <div class="when">Jan 2019 to Present</div>
+      <div>
+        <div class="role">Youth Coordinator</div>
+        <div class="org">Jain Center of America</div>
+        <ul>
+          <li>Part of the Jain temples in the JAINA National organization.</li>
+          <li>Help organize and facilitate engaging youth development programs, workshops, and events for a diverse group of participants.</li>
+          <li>Lead the Jain temple's annual national event as stage coordinator, directing 20+ participants in a performance about Jainism in Hindi.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">03</span><h2>Projects</h2></div>
+    <div class="projects">
+      <div class="project reveal">
+        <div class="ptitle">TryAi</div>
+        <div class="pdesc">A startup where I'm the tech lead and director of operations. It lets you view everyday marketplace items in 3D on your phone and use AR to give them a real physical presence. I built the backend and the real-time rendering that turns 2D images into 3D models, and helped raise $10,000 in funding from investors like 996 Ventures.</div>
+        <div class="ptags">
+          <span class="ptag">3D</span>
+          <span class="ptag">AR</span>
+          <span class="ptag">API</span>
+          <span class="ptag">Backend</span>
+        </div>
+        <a class="plink" href="https://drive.google.com/file/d/11tGaTdP8i8MAGTLB81cN-H0r6AvpsrZ8/view" target="_blank" rel="noopener">Watch the demo <span>-&gt;</span></a>
+      </div>
+      <div class="project reveal">
+        <div class="ptitle">Tech Finding</div>
+        <div class="pdesc">A website I built to help people learn to code faster. It recommends resources based on the language you want to learn and how much you already know, and includes a live chat so learners can ask questions. I made it during my All Star Code summer intensive and presented it to leaders at ServiceNow on demo day.</div>
+        <div class="ptags">
+          <span class="ptag">HTML</span>
+          <span class="ptag">CSS</span>
+          <span class="ptag">JavaScript</span>
+          <span class="ptag">Firebase</span>
+        </div>
+        <a class="plink" href="https://avishj19.github.io/Tech_find/" target="_blank" rel="noopener">View the site <span>-&gt;</span></a>
+      </div>
+      <div class="project reveal">
+        <div class="ptitle">Jump Dash</div>
+        <div class="pdesc">A one-button endless runner wired to a live physics readout. Every jump is captured as a vector (launch speed, apex height, hang time, horizontal reach) and plotted in real time, so you can read your arc and repeat it. It also tracks session stats like mean apex, rhythm consistency, and reaction time.</div>
+        <div class="ptags">
+          <span class="ptag">JavaScript</span>
+          <span class="ptag">Canvas</span>
+          <span class="ptag">Physics</span>
+          <span class="ptag">Game</span>
+        </div>
+        <a class="plink" href="https://avishj19.github.io/jump/" target="_blank" rel="noopener">Play the game <span>-&gt;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">04</span><h2>Awards</h2></div>
+    <div class="awards">
+      <div class="award reveal">
+        <div class="aicon">01</div>
+        <div class="aname">NYC High School Football City Championship</div>
+        <div class="adesc">PSAL champion with Brooklyn Tech Varsity Football</div>
+      </div>
+      <div class="award reveal">
+        <div class="aicon">02</div>
+        <div class="aname">AP Scholar with Distinction</div>
+        <div class="adesc">College Board</div>
+      </div>
+      <div class="award reveal">
+        <div class="aicon">03</div>
+        <div class="aname">National Honor Society</div>
+        <div class="adesc">Member, Brooklyn Tech chapter</div>
+      </div>
+      <div class="award reveal">
+        <div class="aicon">04</div>
+        <div class="aname">Most Improved Executive</div>
+        <div class="adesc">NextGen Innovators, an organization that helps underprivileged middle schoolers across Brooklyn learn 3D modeling and Arduino</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num">05</span><h2>Skills and Credentials</h2></div>
+    <div class="two-col">
+      <div class="reveal">
+        <div class="mono" style="margin-bottom:14px">Top Skills</div>
+        <div class="chips">
+          <span class="chip">Team Management</span>
+          <span class="chip">Presentation Skills</span>
+          <span class="chip">Sales Operations</span>
+          <span class="chip">Financial Literacy</span>
+          <span class="chip">Financial Modeling</span>
+          <span class="chip">Leadership</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Python</span>
+          <span class="chip">Data Analysis</span>
+          <span class="chip">Git and GitHub</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="mono" style="margin-bottom:14px">Certifications</div>
+        <div class="cert-list">
+          <div class="cert"><span class="mark">-&gt;</span><div class="body"><strong>Summer Intensive</strong><span>All Star Code</span></div></div>
+          <div class="cert"><span class="mark">-&gt;</span><div class="body"><strong>S2 HUVTSP</strong><span>Harvard Undergraduate Ventures-TECH</span></div></div>
+        </div>
+        <div class="mono" style="margin:28px 0 14px">Education</div>
+        <div class="edu">
+          <div class="row"><div class="name">Carnegie Mellon University</div><div class="meta">Business Administration and Computer Science</div></div>
+          <div class="row"><div class="name">Brooklyn Technical High School</div><div class="meta">High School Diploma, Finance (2022 to 2026)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">I aim to make a<br>positive, <em>lasting impact.</em></h2>
+    <div class="contact-links reveal">
+      <a href="mailto:avishj19@gmail.com">Email me</a>
+      <a class="plain" href="https://www.linkedin.com/in/avishjain-1a9054346" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="plain" href="#" data-resume>Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Avish Jain</span>
+    <span class="mono">New York, NY</span>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Scroll progress bar
+  const bar=document.getElementById('progress');
+  const onScroll=()=>{
+    const h=document.documentElement;
+    const max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // Active section highlight in nav
+  const navLinks=[...document.querySelectorAll('nav .links a')];
+  const sections=navLinks
+    .map(a=>document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        navLinks.forEach(a=>a.classList.remove('active'));
+        const active=navLinks.find(a=>a.getAttribute('href')==='#'+e.target.id);
+        if(active)active.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(s=>spy.observe(s));
+
+  // Resume button — wire up once the file exists.
+  // Set RESUME_URL to your PDF path (e.g. 'Avish-Jain-Resume.pdf') to enable.
+  const RESUME_URL='Avish-Jain-Resume.pdf';
+  document.querySelectorAll('[data-resume]').forEach(btn=>{
+    if(RESUME_URL){
+      btn.setAttribute('href',RESUME_URL);
+      btn.setAttribute('target','_blank');
+      btn.setAttribute('rel','noopener');
+    }else{
+      btn.addEventListener('click',(e)=>{e.preventDefault();alert('Resume coming soon — add your PDF and set RESUME_URL in the script.');});
+    }
+  });
+</script>
+</body>
+</html>
